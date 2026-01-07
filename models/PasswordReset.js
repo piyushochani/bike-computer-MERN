@@ -45,8 +45,6 @@ const passwordResetSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// Index for cleanup of expired tokens
-passwordResetSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });
 
 // Static method to generate reset token
 passwordResetSchema.statics.createResetToken = async function(userId, ipAddress = null, userAgent = null) {

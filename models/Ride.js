@@ -187,7 +187,6 @@ const rideSchema = new mongoose.Schema({
 
 // Indexes for performance
 rideSchema.index({ userId: 1, activityDate: -1 });
-rideSchema.index({ isFlagged: 1 });
 rideSchema.index({ rideName: 'text' });
 
 // Pre-save middleware to calculate coins
